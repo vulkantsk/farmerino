@@ -19,6 +19,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
+		"ItemPurchasable"				"0"
 		"ItemCost"						"2250"
 		"ItemShopTags"					"teleport"
 		"ItemQuality"					"component"

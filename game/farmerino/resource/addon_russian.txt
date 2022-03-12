@@ -3,6 +3,17 @@
 "Language"	"russian"
 "Tokens"
 {
+//Dragon knight
+		"DOTA_Tooltip_ability_ability_elder_dragon_form"							"Elder Dragon Form"
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_Description"				"Герой обращается в могучего древнего дракона, отчего быстрее передвигается, может дальше применять Dragon Tail и получает особые эффекты атаки.\n<font color=\"#9acd32\">УРОВЕНЬ 1: зелёный дракон<br>Ядовитая атака</font> отравляет цель на %corrosive_breath_duration% сек., нанося ей %corrosive_breath_damage% урона в секунду. Яд действует и на постройки.\n<font color=\"#ff0000\">УРОВЕНЬ 2: красный дракон<br>Массовая атака</font> наносит %splash_damage_percent%%% урона всем врагам в радиусе %splash_radius% от цели. Отравляет всех задетых врагов.\n<font color=\"#87ceeb\">УРОВЕНЬ 3: синий дракон<br>Леденящая атака</font> на %frost_duration% сек. замедляет всех жертв массовой атаки, снижая их скорость передвижения на %frost_bonus_movement_speed%%%, а скорость атаки — на %frost_bonus_attack_speed%. Отравляет всех задетых врагов."
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_shard_description"        "Получает способность Fireball, находясь в облике дракона."
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_scepter_description"      "Поднимает уровень способности на 1. Добавляет четвёртый уровень с чёрным драконом: он увеличивает сопротивление магии и замедление, усиливает урон от яда и по области, а также дарует свободное перемещение."
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_Lore"						"Сила дракона, дремлющая внутри Дейвиона, вырывается наружу, совмещая мощь легендарного рыцаря с могуществом легендарного дракона."
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_Note0"					"Урон от ядовитых атак смертелен."
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_Note1"					"Перезарядка некоторых предметов зависит от того, в какой форме герой находился при их использовании."
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_duration"					"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_bonus_movement_speed"		"ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_ability_elder_dragon_form_bonus_attack_range"		"ДОП. ДАЛЬНОСТЬ АТАКИ:"
 
 //Phantom Assassin(Special hero)
 

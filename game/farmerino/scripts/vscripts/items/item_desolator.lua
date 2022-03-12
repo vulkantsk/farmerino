@@ -7,45 +7,14 @@ function item_desolator:GetIntrinsicModifierName()
 	return "modifier_item_desolator_custom"
 end
 
-item_desolator_1_1 = class(item_desolator)
-item_desolator_1_2 = class(item_desolator)
-item_desolator_1_3 = class(item_desolator)
-item_desolator_1_4 = class(item_desolator)
-
-item_desolator_2_1 = class(item_desolator)
-item_desolator_2_2 = class(item_desolator)
-item_desolator_2_3 = class(item_desolator)
-item_desolator_2_4 = class(item_desolator)
-
-item_desolator_3_1 = class(item_desolator)
-item_desolator_3_2 = class(item_desolator)
-item_desolator_3_3 = class(item_desolator)
-item_desolator_3_4 = class(item_desolator)
-
-item_desolator_4_1 = class(item_desolator)
-item_desolator_4_2 = class(item_desolator)
-item_desolator_4_3 = class(item_desolator)
-item_desolator_4_4 = class(item_desolator)
-
-item_desolator_5_1 = class(item_desolator)
-item_desolator_5_2 = class(item_desolator)
-item_desolator_5_3 = class(item_desolator)
-item_desolator_5_4 = class(item_desolator)
-
-item_desolator_6_1 = class(item_desolator)
-item_desolator_6_2 = class(item_desolator)
-item_desolator_6_3 = class(item_desolator)
-item_desolator_6_4 = class(item_desolator)
-
-item_desolator_7_1 = class(item_desolator)
-item_desolator_7_2 = class(item_desolator)
-item_desolator_7_3 = class(item_desolator)
-item_desolator_7_4 = class(item_desolator)
-
-item_desolator_8_1 = class(item_desolator)
-item_desolator_8_2 = class(item_desolator)
-item_desolator_8_3 = class(item_desolator)
-item_desolator_8_4 = class(item_desolator)
+item_desolator_1 = class(item_desolator)
+item_desolator_2 = class(item_desolator)
+item_desolator_3 = class(item_desolator)
+item_desolator_4 = class(item_desolator)
+item_desolator_5 = class(item_desolator)
+item_desolator_6 = class(item_desolator)
+item_desolator_7 = class(item_desolator)
+item_desolator_8 = class(item_desolator)
 
 modifier_item_desolator_custom = class({
 	IsHidden 		= function(self) return true end,

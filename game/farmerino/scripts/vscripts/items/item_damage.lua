@@ -6,45 +6,15 @@ function item_damage:GetIntrinsicModifierName()
 	return "modifier_item_damage"
 end
 
-item_damage_1_1 = class(item_damage)
-item_damage_1_2 = class(item_damage)
-item_damage_1_3 = class(item_damage)
-item_damage_1_4 = class(item_damage)
+item_damage_1 = class(item_damage)
+item_damage_2 = class(item_damage)
+item_damage_3 = class(item_damage)
+item_damage_4 = class(item_damage)
+item_damage_5 = class(item_damage)
+item_damage_6 = class(item_damage)
+item_damage_7 = class(item_damage)
+item_damage_8 = class(item_damage)
 
-item_damage_2_1 = class(item_damage)
-item_damage_2_2 = class(item_damage)
-item_damage_2_3 = class(item_damage)
-item_damage_2_4 = class(item_damage)
-
-item_damage_3_1 = class(item_damage)
-item_damage_3_2 = class(item_damage)
-item_damage_3_3 = class(item_damage)
-item_damage_3_4 = class(item_damage)
-
-item_damage_4_1 = class(item_damage)
-item_damage_4_2 = class(item_damage)
-item_damage_4_3 = class(item_damage)
-item_damage_4_4 = class(item_damage)
-
-item_damage_5_1 = class(item_damage)
-item_damage_5_2 = class(item_damage)
-item_damage_5_3 = class(item_damage)
-item_damage_5_4 = class(item_damage)
-
-item_damage_6_1 = class(item_damage)
-item_damage_6_2 = class(item_damage)
-item_damage_6_3 = class(item_damage)
-item_damage_6_4 = class(item_damage)
-
-item_damage_7_1 = class(item_damage)
-item_damage_7_2 = class(item_damage)
-item_damage_7_3 = class(item_damage)
-item_damage_7_4 = class(item_damage)
-
-item_damage_8_1 = class(item_damage)
-item_damage_8_2 = class(item_damage)
-item_damage_8_3 = class(item_damage)
-item_damage_8_4 = class(item_damage)
 
 modifier_item_damage = class({
 	IsHidden 		= function(self) return true end,

@@ -6,45 +6,15 @@ function item_curtain_helm:GetIntrinsicModifierName()
    return "modifier_item_curtain_helm"
 end
 
-item_curtain_helm_1_1 = class(item_curtain_helm)
-item_curtain_helm_1_2 = class(item_curtain_helm)
-item_curtain_helm_1_3 = class(item_curtain_helm)
-item_curtain_helm_1_4 = class(item_curtain_helm)
+item_curtain_helm_1 = class(item_curtain_helm)
+item_curtain_helm_2 = class(item_curtain_helm)
+item_curtain_helm_3 = class(item_curtain_helm)
+item_curtain_helm_4 = class(item_curtain_helm)
+item_curtain_helm_5 = class(item_curtain_helm)
+item_curtain_helm_6 = class(item_curtain_helm)
+item_curtain_helm_7 = class(item_curtain_helm)
+item_curtain_helm_8 = class(item_curtain_helm)
 
-item_curtain_helm_2_1 = class(item_curtain_helm)
-item_curtain_helm_2_2 = class(item_curtain_helm)
-item_curtain_helm_2_3 = class(item_curtain_helm)
-item_curtain_helm_2_4 = class(item_curtain_helm)
-
-item_curtain_helm_3_1 = class(item_curtain_helm)
-item_curtain_helm_3_2 = class(item_curtain_helm)
-item_curtain_helm_3_3 = class(item_curtain_helm)
-item_curtain_helm_3_4 = class(item_curtain_helm)
-
-item_curtain_helm_4_1 = class(item_curtain_helm)
-item_curtain_helm_4_2 = class(item_curtain_helm)
-item_curtain_helm_4_3 = class(item_curtain_helm)
-item_curtain_helm_4_4 = class(item_curtain_helm)
-
-item_curtain_helm_5_1 = class(item_curtain_helm)
-item_curtain_helm_5_2 = class(item_curtain_helm)
-item_curtain_helm_5_3 = class(item_curtain_helm)
-item_curtain_helm_5_4 = class(item_curtain_helm)
-
-item_curtain_helm_6_1 = class(item_curtain_helm)
-item_curtain_helm_6_2 = class(item_curtain_helm)
-item_curtain_helm_6_3 = class(item_curtain_helm)
-item_curtain_helm_6_4 = class(item_curtain_helm)
-
-item_curtain_helm_7_1 = class(item_curtain_helm)
-item_curtain_helm_7_2 = class(item_curtain_helm)
-item_curtain_helm_7_3 = class(item_curtain_helm)
-item_curtain_helm_7_4 = class(item_curtain_helm)
-
-item_curtain_helm_8_1 = class(item_curtain_helm)
-item_curtain_helm_8_2 = class(item_curtain_helm)
-item_curtain_helm_8_3 = class(item_curtain_helm)
-item_curtain_helm_8_4 = class(item_curtain_helm)
 
 modifier_item_curtain_helm = class({
     IsHidden                = function(self) return true end,

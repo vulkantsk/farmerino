@@ -269,7 +269,7 @@
 		"Ability3"		"dragon_knight_dragon_blood"
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
-		"Ability6"		"dragon_knight_elder_dragon_form"
+		"Ability6"		"ability_elder_dragon_form"
 		"Ability7"					"generic_hidden"
 		"Ability8"					"generic_hidden"
 		"Ability10"		"special_bonus_hp_150"

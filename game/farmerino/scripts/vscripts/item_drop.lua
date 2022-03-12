@@ -19,15 +19,8 @@ ItemDrop.item_drop = {
 		{items = {"item_scroll_7"}, units = {"npc_creep_7"}, chance = 10, duration = 20},
 		{items = {"item_scroll_8"}, units = {"npc_creep_8"}, chance = 10, duration = 20},
 ]]
-		{items = {"item_powerup_1"}, units = {"npc_boss_1"}, chance = 65, duration = 20},
-		{items = {"item_powerup_2"}, units = {"npc_boss_2"}, chance = 65, duration = 20},
-		{items = {"item_powerup_3"}, units = {"npc_boss_3"}, chance = 65, duration = 20},
-		{items = {"item_powerup_4"}, units = {"npc_boss_4"}, chance = 65, duration = 20},
-		{items = {"item_powerup_5"}, units = {"npc_boss_5"}, chance = 65, duration = 20},
-		{items = {"item_powerup_6"}, units = {"npc_boss_6"}, chance = 65, duration = 20},
-		{items = {"item_powerup_7"}, units = {"npc_boss_7"}, chance = 65, duration = 20},
 		
-		{items = {"item_endgame"}, units = {"npc_boss_8"}, chance = 75, duration = 20},
+		{items = {"item_endgame"}, units = {"npc_boss_8"}, chance = 5, duration = 20},
 }
 
 ItemDrop.secret_items = {

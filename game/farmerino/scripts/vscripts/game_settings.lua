@@ -2,7 +2,7 @@
 START_GAME_AUTOMATICALLY = true				-- Should the game start automatically
 UNIVERSAL_SHOP_MODE = true             -- Should the main shop contain Secret Shop items as well as regular items
 PLAYER_COUNT_GOODGUYS = 1
-PLAYER_COUNT_BADGUYS = 1
+PLAYER_COUNT_BADGUYS  = 1
 PLAYER_COUNT_CUSTOM_1 = 1
 PLAYER_COUNT_CUSTOM_2 = 1
 PLAYER_COUNT_CUSTOM_3 = 1
@@ -15,7 +15,7 @@ HERO_RESPAWN_TIME = 1					--
 STARTING_GOLD = 0						-- What starting gold player have ?
 HERO_START_LEVEL = 1
 
-ALLOW_SAME_HERO_SELECTION = false        -- Should we let people select the same hero as each other
+ALLOW_SAME_HERO_SELECTION = true        -- Should we let people select the same hero as each other
 FREE_COURIER_ENABLED = false
 
 HERO_SELECTION_TIME = 30.0              -- How long should we let people select their hero?
@@ -61,7 +61,8 @@ MAX_LEVEL = 50
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
 -- Fill this table up with the required XP per level if you want to change it
-XP_PER_LEVEL_TABLE = {30,85,165,270,400,555,735,940,1170,1425,1745,2130,2580,3095,3675,4320,5030,5805,6645,7550,8630,9885,11315,12920,14700,16655,18785,21090,23570,26225,29430,33185,37490,42345,47750,53705,60210,67265,74870,83025,91880,101435,111690,122645,134300,146655,159710,173465,187920,203075,219080,235935,253640,272195,291600,311855,332960,354915,377720,401375,428780,459935,494840,533495,575900,622055,671960,725615,783020,844175,914330,993485,1081640,1178795,1284950,1400105,1524260,1657415,1799570,1950725}XP_PER_LEVEL_TABLE[0] = 0
+XP_PER_LEVEL_TABLE = {30,85,165,270,400,555,735,940,1170,1425,1745,2130,2580,3095,3675,4320,5030,5805,6645,7550,8630,9885,11315,12920,14700,16655,18785,21090,23570,26225,29430,33185,37490,42345,47750,53705,60210,67265,74870,83025,91880,101435,111690,122645,134300,146655,159710,173465,187920,203075,219080,235935,253640,272195,291600,311855,332960,354915,377720,401375,428780,459935,494840,533495,575900,622055,671960,725615,783020,844175,914330,993485,1081640,1178795,1284950,1400105,1524260,1657415,1799570,1950725}
+XP_PER_LEVEL_TABLE[0] = 0
 
 --[[
 for i=1,9 do
@@ -208,7 +209,7 @@ function GameSettings:OnConnectFull(keys)
 	DeepPrintTable(keys)
 	GameSettings:CaptureGameMode()
 
-	local entIndex = keys.index+1
+--[[	local entIndex = keys.index+1
 	-- The Player entity of the joining user
 	local ply = EntIndexToHScript(entIndex)
 
@@ -225,7 +226,7 @@ function GameSettings:OnConnectFull(keys)
 	if PlayerResource:IsBroadcaster(playerID) then
 		self.vBroadcasters[keys.userid] = 1
 		return
-	end
+	end]]
 end
 
 -- This function is called as the first player loads and sets up the GameSettings parameters

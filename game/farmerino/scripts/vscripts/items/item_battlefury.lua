@@ -6,45 +6,14 @@ function item_battlefury:GetIntrinsicModifierName()
 	return "modifier_item_battlefury_custom"
 end
 
-item_battlefury_1_1 = class(item_battlefury)
-item_battlefury_1_2 = class(item_battlefury)
-item_battlefury_1_3 = class(item_battlefury)
-item_battlefury_1_4 = class(item_battlefury)
-
-item_battlefury_2_1 = class(item_battlefury)
-item_battlefury_2_2 = class(item_battlefury)
-item_battlefury_2_3 = class(item_battlefury)
-item_battlefury_2_4 = class(item_battlefury)
-
-item_battlefury_3_1 = class(item_battlefury)
-item_battlefury_3_2 = class(item_battlefury)
-item_battlefury_3_3 = class(item_battlefury)
-item_battlefury_3_4 = class(item_battlefury)
-
-item_battlefury_4_1 = class(item_battlefury)
-item_battlefury_4_2 = class(item_battlefury)
-item_battlefury_4_3 = class(item_battlefury)
-item_battlefury_4_4 = class(item_battlefury)
-
-item_battlefury_5_1 = class(item_battlefury)
-item_battlefury_5_2 = class(item_battlefury)
-item_battlefury_5_3 = class(item_battlefury)
-item_battlefury_5_4 = class(item_battlefury)
-
-item_battlefury_6_1 = class(item_battlefury)
-item_battlefury_6_2 = class(item_battlefury)
-item_battlefury_6_3 = class(item_battlefury)
-item_battlefury_6_4 = class(item_battlefury)
-
-item_battlefury_7_1 = class(item_battlefury)
-item_battlefury_7_2 = class(item_battlefury)
-item_battlefury_7_3 = class(item_battlefury)
-item_battlefury_7_4 = class(item_battlefury)
-
-item_battlefury_8_1 = class(item_battlefury)
-item_battlefury_8_2 = class(item_battlefury)
-item_battlefury_8_3 = class(item_battlefury)
-item_battlefury_8_4 = class(item_battlefury)
+item_battlefury_1 = class(item_battlefury)
+item_battlefury_2 = class(item_battlefury)
+item_battlefury_3 = class(item_battlefury)
+item_battlefury_4 = class(item_battlefury)
+item_battlefury_5 = class(item_battlefury)
+item_battlefury_6 = class(item_battlefury)
+item_battlefury_7 = class(item_battlefury)
+item_battlefury_8 = class(item_battlefury)
 
 modifier_item_battlefury_custom = class({
     IsHidden                = function(self) return true end,

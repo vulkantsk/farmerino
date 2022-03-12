@@ -1,33 +1,31 @@
 "dota_shops"
-{
+{ 
 	"consumables"
 	{
-		"item"		"item_tpscroll"
-		"item"		"item_ward_observer"
+		"item"		"item_invul_potion"
 		
 	}
 
 	"attributes"
 	{
-		"item"		"item_damage_1_1"
-		"item"		"item_attackspeed_1_1"
-		"item"		"item_crit_1_1"
-		"item"		"item_desolator_1_1"
-		"item"		"item_bladestorm_1_1"
-		"item"		"item_battlefury_1_1"	
+		"item"		"item_damage_1"
+		"item"		"item_attackspeed_1"
+		"item"		"item_crit_1"
+		"item"		"item_desolator_1"
+		"item"		"item_bladestorm_1"
+//		"item"		"item_battlefury_1"	
 	}
 
 	"weapons_armor"
 	{
-		"item"		"item_health_1_1"
-		"item"		"item_armor_1_1"
-		"item"		"item_ancient_shield_1_1"
-		"item"		"item_hero_armor_1_1"
-		"item"		"item_curtain_helm_1_1"
-		"item"		"item_hard_armor_1_1"
+		"item"		"item_health_1"
+		"item"		"item_armor_1"
+		"item"		"item_ancient_shield_1"
+		"item"		"item_hero_armor_1"
+		"item"		"item_curtain_helm_1"
+		"item"		"item_hard_armor_1"
 
-	}
-			
+	}		
 	"misc"
 	{
 		"item"		"item_endgame"

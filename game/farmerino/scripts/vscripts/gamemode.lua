@@ -35,6 +35,7 @@ TeamTable = {
 	},
 }
 LOCATION_CREEP_COUNT = 8
+BOSS_REFRESH_TIMER = 30
 if GameMode == nil then
 	_G.GameMode = class({})
 end
@@ -50,31 +51,47 @@ function GameMode:OnGameRulesStateChange()
 
 	if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 		self:SpawnExampleCreeps()
+    elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
+        for i = 0, 9 do
+            local hPlayer = PlayerResource:GetPlayer(i)
+            if PlayerResource:IsValidPlayerID(i) and hPlayer and not PlayerResource:HasSelectedHero(i) then
+                hPlayer:MakeRandomHeroSelection()
+            end
+        end
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-	end
+
+    end
 end
 
 function GameMode:SpawnExampleCreeps()
 	for index =1,8 do
 		local creep_name = "npc_creep_"..index
 		local point = Entities:FindByName(nil, "point_example_creep_"..index)
-		local point_origin = point:GetAbsOrigin()
-		local point_fw = point:GetForwardVector()
 		
-		local unit = CreateUnitByName(creep_name, point_origin, true, nil, nil, DOTA_TEAM_NEUTRALS)
-		unit:SetForwardVector(point_fw)
-		unit:AddNewModifier(unit, nil, "modifier_example_creep", {duration = -1})
+		if point then 
+			local point_origin = point:GetAbsOrigin()
+			local point_fw = point:GetForwardVector()
+			local unit = CreateUnitByName(creep_name, point_origin, true, nil, nil, DOTA_TEAM_NEUTRALS)
+			unit:SetForwardVector(point_fw)
+			unit:AddNewModifier(unit, nil, "modifier_example_creep", {duration = -1})
+		else
+			print("point_example_creep_"..index.. " not exist !")
+		end
 	end
+	
 	for index =1,4 do
-		local key = index * 2
-		local creep_name = "npc_creep_"..key
-		local point = Entities:FindByName(nil, "point_example_creep_"..key)
-		local point_origin = point:GetAbsOrigin()
-		local point_fw = point:GetForwardVector()
+		local creep_name = "npc_boss_"..index
+		local point = Entities:FindByName(nil, "point_example_boss_"..index)
 		
-		local unit = CreateUnitByName(creep_name, point_origin, true, nil, nil, DOTA_TEAM_NEUTRALS)
-		unit:SetForwardVector(point_fw)
-		unit:AddNewModifier(unit, nil, "modifier_example_creep", {duration = -1})
+		if point then 
+			local point_origin = point:GetAbsOrigin()
+			local point_fw = point:GetForwardVector()
+			local unit = CreateUnitByName(creep_name, point_origin, true, nil, nil, DOTA_TEAM_NEUTRALS)
+			unit:SetForwardVector(point_fw)
+			unit:AddNewModifier(unit, nil, "modifier_example_creep", {duration = -1})
+		else
+			print("point_example_boss_"..index.. " not exist !")
+		end
 	end
 end
 

@@ -7,45 +7,14 @@ function item_bladestorm:GetIntrinsicModifierName()
 	return "modifier_item_bladestorm"
 end
 
-item_bladestorm_1_1 = class(item_bladestorm)
-item_bladestorm_1_2 = class(item_bladestorm)
-item_bladestorm_1_3 = class(item_bladestorm)
-item_bladestorm_1_4 = class(item_bladestorm)
-
-item_bladestorm_2_1 = class(item_bladestorm)
-item_bladestorm_2_2 = class(item_bladestorm)
-item_bladestorm_2_3 = class(item_bladestorm)
-item_bladestorm_2_4 = class(item_bladestorm)
-
-item_bladestorm_3_1 = class(item_bladestorm)
-item_bladestorm_3_2 = class(item_bladestorm)
-item_bladestorm_3_3 = class(item_bladestorm)
-item_bladestorm_3_4 = class(item_bladestorm)
-
-item_bladestorm_4_1 = class(item_bladestorm)
-item_bladestorm_4_2 = class(item_bladestorm)
-item_bladestorm_4_3 = class(item_bladestorm)
-item_bladestorm_4_4 = class(item_bladestorm)
-
-item_bladestorm_5_1 = class(item_bladestorm)
-item_bladestorm_5_2 = class(item_bladestorm)
-item_bladestorm_5_3 = class(item_bladestorm)
-item_bladestorm_5_4 = class(item_bladestorm)
-
-item_bladestorm_6_1 = class(item_bladestorm)
-item_bladestorm_6_2 = class(item_bladestorm)
-item_bladestorm_6_3 = class(item_bladestorm)
-item_bladestorm_6_4 = class(item_bladestorm)
-
-item_bladestorm_7_1 = class(item_bladestorm)
-item_bladestorm_7_2 = class(item_bladestorm)
-item_bladestorm_7_3 = class(item_bladestorm)
-item_bladestorm_7_4 = class(item_bladestorm)
-
-item_bladestorm_8_1 = class(item_bladestorm)
-item_bladestorm_8_2 = class(item_bladestorm)
-item_bladestorm_8_3 = class(item_bladestorm)
-item_bladestorm_8_4 = class(item_bladestorm)
+item_bladestorm_1 = class(item_bladestorm)
+item_bladestorm_2 = class(item_bladestorm)
+item_bladestorm_3 = class(item_bladestorm)
+item_bladestorm_4 = class(item_bladestorm)
+item_bladestorm_5 = class(item_bladestorm)
+item_bladestorm_6 = class(item_bladestorm)
+item_bladestorm_7 = class(item_bladestorm)
+item_bladestorm_8 = class(item_bladestorm)
 
 modifier_item_bladestorm = class({
 	IsHidden 		= function(self) return true end,
