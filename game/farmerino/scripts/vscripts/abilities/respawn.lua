@@ -16,11 +16,12 @@ modifier_respawn_weak = class({
 })
 
 function modifier_respawn_weak:OnCreated( kv )
-	local ability = self:GetAbility()
-	self.respawn_duration = ability:GetSpecialValueFor("respawn_duration")
+	self.ability = self:GetAbility()
+	self.respawn_duration = self.ability:GetSpecialValueFor("respawn_duration")
 end
 
 function modifier_respawn_weak:OnDeath(data)
+	if not IsServer() then return end
 	local unit = data.unit
 	local caster = self:GetCaster()
 
@@ -59,15 +60,17 @@ modifier_respawn_strong = class({
 })
 
 function modifier_respawn_strong:OnCreated( kv )
+	if not IsServer() then return end
 	Timers:CreateTimer(0,function()
-		local ability = self:GetAbility()
-		self.respawn_duration = ability:GetSpecialValueFor("respawn_duration")
+		self.ability = self:GetAbility()
+		self.respawn_duration = self.ability:GetSpecialValueFor("respawn_duration")
 		self.spawn_loc = self:GetCaster():GetAbsOrigin()
 		self.caster_fw = self:GetCaster():GetForwardVector()
 	end)
 end
 
 function modifier_respawn_strong:OnDeath(data)
+	if not IsServer() then return end
 	local unit = data.unit
 	local caster = self:GetCaster()
 
@@ -102,15 +105,17 @@ modifier_respawn_boss = class({
 })
 
 function modifier_respawn_boss:OnCreated( kv )
+	if not IsServer() then return end
 	Timers:CreateTimer(0,function()
-		local ability = self:GetAbility()
-		self.respawn_duration = ability:GetSpecialValueFor("respawn_duration")
+		self.ability = self:GetAbility()
+		self.respawn_duration = self.ability:GetSpecialValueFor("respawn_duration")
 		self.spawn_loc = self:GetCaster():GetAbsOrigin()
 		self.caster_fw = self:GetCaster():GetForwardVector()
 	end)
 end
 
 function modifier_respawn_boss:OnDeath(data)
+	if not IsServer() then return end
 	local unit = data.unit
 	local caster = self:GetCaster()
 

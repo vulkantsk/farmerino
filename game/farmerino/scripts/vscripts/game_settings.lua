@@ -43,7 +43,7 @@ CUSTOM_BUYBACK_COOLDOWN = 900  -- Should we use a custom buyback time?
 BUYBACK_ENABLED = true                 -- Should we allow people to buyback when they die?
 
 DISABLE_FOG_OF_WAR_ENTIRELY = false     -- Should we disable fog of war entirely for both teams?
-USE_UNSEEN_FOG_OF_WAR = true           -- Should we make unseen and fogged areas of the map completely black until uncovered by each team? 
+USE_UNSEEN_FOG_OF_WAR = true           -- Should we make unseen and fogged areas of the map completely black until uncovered by each team?
                                             -- Note: DISABLE_FOG_OF_WAR_ENTIRELY must be false for USE_UNSEEN_FOG_OF_WAR to work
 USE_STANDARD_DOTA_BOT_THINKING = false  -- Should we have bots act like they would in Dota? (This requires 3 lanes, normal items, etc)
 USE_STANDARD_HERO_GOLD_BOUNTY = true    -- Should we give gold for hero kills the same as in Dota, or allow those values to be changed?
@@ -123,8 +123,8 @@ function GameSettings:InitGameSettings()
 	GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
 	GameRules:SetSameHeroSelectionEnabled( ALLOW_SAME_HERO_SELECTION )
 	GameRules:SetHeroSelectionTime( HERO_SELECTION_TIME )
-	GameRules:SetStrategyTime( HERO_STRATEGY_TIME )	
-	GameRules:SetShowcaseTime( HERO_SHOWCASE_TIME )	
+	GameRules:SetStrategyTime( HERO_STRATEGY_TIME )
+	GameRules:SetShowcaseTime( HERO_SHOWCASE_TIME )
 	GameRules:SetPreGameTime( PRE_GAME_TIME)
 	GameRules:SetPostGameTime( POST_GAME_TIME )
 	GameRules:SetTreeRegrowTime( TREE_REGROW_TIME )
@@ -141,13 +141,13 @@ function GameSettings:InitGameSettings()
 	-- Listeners - Event Hooks
 	-- All of these events can potentially be fired by the game, though only the uncommented ones have had
 	-- Functions supplied for them.
-	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(GameSettings, 'OnPlayerLevelUp'), self)
-	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameSettings, 'OnAbilityChannelFinished'), self)
-	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(GameSettings, 'OnPlayerLearnedAbility'), self)
+--	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(GameSettings, 'OnPlayerLevelUp'), self)
+--	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameSettings, 'OnAbilityChannelFinished'), self)
+--	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(GameSettings, 'OnPlayerLearnedAbility'), self)
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(GameSettings, 'OnEntityKilled'), self)
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(GameSettings, 'OnConnectFull'), self)
 --	ListenToGameEvent('player_disconnect', Dynamic_Wrap(GameSettings, 'OnDisconnect'), self)
-	ListenToGameEvent("player_reconnected", Dynamic_Wrap(GameSettings, 'OnPlayerReconnect'), self)
+--	ListenToGameEvent("player_reconnected", Dynamic_Wrap(GameSettings, 'OnPlayerReconnect'), self)
 --	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(GameSettings, 'OnItemPurchased'), self)
 --	ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(GameSettings, 'OnItemPickedUp'), self)
 --	ListenToGameEvent('last_hit', Dynamic_Wrap(GameSettings, 'OnLastHit'), self)
@@ -158,11 +158,11 @@ function GameSettings:InitGameSettings()
 --	ListenToGameEvent('tree_cut', Dynamic_Wrap(GameSettings, 'OnTreeCut'), self)
 --	ListenToGameEvent('entity_hurt', Dynamic_Wrap(GameSettings, 'OnEntityHurt'), self)
 --	ListenToGameEvent('player_connect', Dynamic_Wrap(GameSettings, 'PlayerConnect'), self)
-	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(GameSettings, 'OnAbilityUsed'), self)
+--	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(GameSettings, 'OnAbilityUsed'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(GameSettings, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(GameSettings, 'OnNPCSpawned'), self)
-	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(GameSettings, 'OnPlayerPickHero'), self)
-	ListenToGameEvent('dota_team_kill_credit', Dynamic_Wrap(GameSettings, 'OnTeamKillCredit'), self)
+--	ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(GameSettings, 'OnPlayerPickHero'), self)
+--	ListenToGameEvent('dota_team_kill_credit', Dynamic_Wrap(GameSettings, 'OnTeamKillCredit'), self)
 
 	-- Change random seed
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
@@ -253,7 +253,7 @@ function GameSettings:CaptureGameMode()
 		mode:SetUnseenFogOfWarEnabled(USE_UNSEEN_FOG_OF_WAR)
 		mode:SetGoldSoundDisabled( DISABLE_GOLD_SOUNDS )
 		mode:SetRemoveIllusionsOnDeath( REMOVE_ILLUSIONS_ON_DEATH )
-		mode:SetMaximumAttackSpeed( MAXIMUM_ATTACK_SPEED ) 
+		mode:SetMaximumAttackSpeed( MAXIMUM_ATTACK_SPEED )
 		mode:SetMinimumAttackSpeed( MINIMUM_ATTACK_SPEED )
 
 
@@ -294,13 +294,13 @@ function GameSettings:ExampleConsoleCommand()
 end
 
 --[[
-  This function should be used to set up Async precache calls at the beginning of the game.  The Precache() function 
+  This function should be used to set up Async precache calls at the beginning of the game.  The Precache() function
   in addon_game_mode.lua used to and may still sometimes have issues with client's appropriately precaching stuff.
   If this occurs it causes the client to never precache things configured in that block.
   In this function, place all of your PrecacheItemByNameAsync and PrecacheUnitByNameAsync.  These calls will be made
   after all players have loaded in, but before they have selected their heroes. PrecacheItemByNameAsync can also
-  be used to precache dynamically-added datadriven abilities instead of items.  PrecacheUnitByNameAsync will 
-  precache the precache{} block statement of the unit and all precache{} block statements for every Ability# 
+  be used to precache dynamically-added datadriven abilities instead of items.  PrecacheUnitByNameAsync will
+  precache the precache{} block statement of the unit and all precache{} block statements for every Ability#
   defined on the unit.
   This function should only be called once.  If you want to/need to precache more items/abilities/units at a later
   time, you can call the functions individually (for example if you want to precache units in a new wave of
@@ -359,7 +359,7 @@ end
 function GameSettings:OnGameInProgress()
 	print("[BAREBONES] The game has officially begun")
 	for i=0,4 do
-		PlayerResource:SetCustomBuybackCooldown(i, CUSTOM_BUYBACK_COOLDOWN)		
+		PlayerResource:SetCustomBuybackCooldown(i, CUSTOM_BUYBACK_COOLDOWN)
 		PlayerResource:SetCustomBuybackCost(i, CUSTOM_BUYBACK_COST)
 	end
 	print("Make buildings vulnerable")
@@ -465,8 +465,8 @@ function GameSettings:OnAbilityUsed(keys)
 	local player = EntIndexToHScript(keys.PlayerID)
 	local abilityname = keys.abilityname
 	local caster = EntIndexToHScript(keys.caster_entindex)
-	
-	
+
+
 	if GetMapName() == "roshdef_turbo" then
 		if abilityname == "item_ultra_boots" or abilityname == "item_travel_boots_2" or abilityname == "item_travel_boots"or abilityname == "item_tpscroll" then
 			for i=0,8 do
@@ -474,15 +474,15 @@ function GameSettings:OnAbilityUsed(keys)
 				local item_name = ""
 				if item then item_name = item:GetAbilityName() end
 --				print ("item = "..item_name)
-				
-				if item and item_name == abilityname then 
+
+				if item and item_name == abilityname then
 					Timers:CreateTimer(0.01,function()
 --						local cooldown = item:GetCooldownTimeRemaining()/2
 						local cooldown = item:GetCooldownTime()/2
 						item:EndCooldown()
 						item:StartCooldown(cooldown)
 					end)
-				end 			
+				end
 			end
 		end
 	end
@@ -619,9 +619,9 @@ function GameSettings:OnNPCSpawned(keys)
 --	DeepPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	local name = npc:GetUnitName()
-	
+
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
---		GameSettings:OnHeroInGame(npc)			
+--		GameSettings:OnHeroInGame(npc)
 		npc.bFirstSpawned = true
 		local playerID = npc:GetPlayerID()
 		local steamID = PlayerResource:GetSteamAccountID(playerID)
@@ -629,10 +629,10 @@ function GameSettings:OnNPCSpawned(keys)
 		if FirstSpawned == nil then
 			FirstSpawned = {}
 		end
-		
+
 		if not FirstSpawned[playerID] then
 			FirstSpawned[playerID] = true
-			
+
 --			local ability = npc:GetAbilityByIndex(3)
 --			ability:SetLevel(1)
 
@@ -640,7 +640,7 @@ function GameSettings:OnNPCSpawned(keys)
 				npc:AddExperience(50, 0, true, true)
 			end
 		end
-	end	
+	end
 	if npc:IsTempestDouble() or npc:IsIllusion() then
 		local owner = npc:GetPlayerOwner():GetAssignedHero()
 		npc:SetTeam(owner:GetTeam())
@@ -665,12 +665,12 @@ function GameSettings:OnEntityKilled( keys )
 	-- The Killing entity
 	local killerEntity = nil
 	local team= killedUnit:GetTeam()
-	
+
 	if killedUnit:IsRealHero() and killedUnit:IsReincarnating() == false then
 		killedUnit:SetTimeUntilRespawn( HERO_RESPAWN_TIME )
 --		PlayerResource:SetCustomBuybackCost(killedUnit:GetPlayerID(), CUSTOM_BUYBACK_COST)
 	end
-	
+
 	if keys.entindex_attacker ~= nil then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end

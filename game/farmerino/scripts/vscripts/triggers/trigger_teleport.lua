@@ -5,7 +5,7 @@ function TeleportCreep(trigger)
 	local triggerName = thisEntity:GetName()
 	local teleport_point_name = "point_teleport_creep_"
 	local creep_level = 0
-	
+
 	if triggerName == "trigger_teleport_creep_1" then
 		creep_level = 1
 	elseif triggerName == "trigger_teleport_creep_2" then
@@ -37,7 +37,7 @@ function TeleportBoss(trigger)
 	local triggerName = thisEntity:GetName()
 	local teleport_point_name = "point_teleport_creep_"
 	local boss_level = 0
-	
+
 	if triggerName == "trigger_teleport_boss_1" then
 		boss_level = 1
 	elseif triggerName == "trigger_teleport_boss_2" then
@@ -54,7 +54,7 @@ function TeleportBoss(trigger)
 	if TeamTable[team_id].boss_available == nil then
 		TeamTable[team_id].boss_available = true
 	end
-	
+
 	if TeamTable[team_id].boss_available == true then
 		TeamTable[team_id].boss_available = false
 		Timers:CreateTimer(BOSS_REFRESH_TIMER, function()
@@ -77,7 +77,7 @@ function TeleportHome( keys )
 	end
 
 	local point =  Entities:FindByName( nil, point_name):GetAbsOrigin()
-	 
+
 	FindClearSpaceForUnit(target, point, true)
 	target:Stop()
 	target:SetHealth(target:GetMaxHealth())
@@ -85,11 +85,11 @@ function TeleportHome( keys )
 	if team == DOTA_TEAM_NEUTRALS or not target:IsRealHero() then
 		return
 	end
-	
+
 	PlayerResource:SetCameraTarget(player, target)
 	Timers:CreateTimer(0.1, function()
 		PlayerResource:SetCameraTarget(player, nil) -- Чтобы камера разблочилась
-	end)	
+	end)
 end
 
 function TeleportToPoint( target, point_name )
@@ -100,18 +100,18 @@ function TeleportToPoint( target, point_name )
 	end
 
 	local point =  Entities:FindByName( nil, point_name):GetAbsOrigin()
-	 
+
 	FindClearSpaceForUnit(target, point, true)
 	target:Stop()
-	
+
 	PlayerResource:SetCameraTarget(player, target)
 	Timers:CreateTimer(0.1, function()
 		PlayerResource:SetCameraTarget(player, nil) -- Чтобы камера разблочилась
-	end)	
+	end)
 end
 
 function CreateCreepsForTeam(creep_level, team_id)
-	
+
 	if  not TeamTable[team_id].CreepLevel then
 		print("creep_level = "..creep_level)
 --		print("entindex = "..TeamTable[team_id].CreepLevel)
@@ -121,7 +121,7 @@ function CreateCreepsForTeam(creep_level, team_id)
 		print("table_creep_level = "..TeamTable[team_id].CreepLevel)
 		return
 	end
-	
+
 	--Убить всех юнитов с прошлого спавна
 	if TeamTable[team_id].Creeps then
 		for ent_id, creep in pairs(TeamTable[team_id].Creeps) do
@@ -134,13 +134,13 @@ function CreateCreepsForTeam(creep_level, team_id)
 
 	local unit_name = "npc_creep_"..creep_level
 	local points = Entities:FindAllByName("point_spawn_creep_"..team_id)
-	
+
 	for i=1, LOCATION_CREEP_COUNT do
 		local point = points[RandomInt(1, #points)]:GetAbsOrigin()
 		local unit = CreateUnitByName(unit_name, point, true, nil, nil, DOTA_TEAM_NEUTRALS)
 		unit:SetUnitCanRespawn(true)
 		local ent_id = unit:entindex()
-		
+
 		TeamTable[team_id].Creeps[ent_id] = unit
 	end
 
@@ -163,12 +163,12 @@ function CreateBossForTeam(boss_level, team_id)
 	local point = Entities:FindByName(nil, "point_spawn_boss_"..team_id)
 	local point_origin = point:GetAbsOrigin()
 	local point_fw = point:GetForwardVector()
-	
+
 	local unit = CreateUnitByName(unit_name, point_origin, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	unit:SetForwardVector(point_fw)
 	unit:SetUnitCanRespawn(true)
 	local ent_id = unit:entindex()
-	
+
 	TeamTable[team_id].Creeps[ent_id] = unit
 
 end

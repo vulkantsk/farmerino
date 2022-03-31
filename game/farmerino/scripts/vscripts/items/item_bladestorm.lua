@@ -25,14 +25,23 @@ modifier_item_bladestorm = class({
 	}end,
 })
 
+function modifier_item_bladestorm:OnCreated()
+	self.ability = self:GetAbility()
+	self.bonus_damage =  self.ability:GetSpecialValueFor("bonus_damage")
+end
+
+function modifier_item_bladestorm:OnRefresh()
+	self:OnCreated()
+end
+
 function modifier_item_bladestorm:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+	return self.bonus_damage
 end
 
 function modifier_item_bladestorm:OnCreated()
-	local ability = self:GetAbility()
-	if ability.thinkers == nil then
-		ability.thinkers = {}
+	self.ability = self:GetAbility()
+	if self.ability.thinkers == nil then
+		self.ability.thinkers = {}
 	end
 end
 
@@ -42,6 +51,7 @@ end
 
 
 function modifier_item_bladestorm:OnAttackLanded(data)
+	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local target = data.target
 	local attacker = data.attacker
@@ -82,6 +92,7 @@ function modifier_thinker_item_bladestorm:OnDestroy()
 end
 
 function modifier_thinker_item_bladestorm:ChainLight(target1, target2)
+	if not IsServer() then return end
 	self.bounced_targets[target2:entindex()] = true
 	self.target_count = self.target_count + 1
 

@@ -35,6 +35,7 @@ function modifier_item_curtain_helm:GetModifierPhysicalArmorBonus()
 end
 
 function modifier_item_curtain_helm:OnCreated(data)
+    if not IsServer() then return end
     local ability = self:GetAbility()
     self.tick_interval = 0.1
     self:StartIntervalThink(self.tick_interval)
@@ -54,6 +55,7 @@ function modifier_item_curtain_helm:OnDestroy()
 end
 
 function modifier_item_curtain_helm:OnIntervalThink()
+    if not IsServer() then return end
     local ability = self:GetAbility()
     local caster = self:GetCaster()
 

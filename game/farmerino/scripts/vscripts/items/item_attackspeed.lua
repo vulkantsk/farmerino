@@ -25,6 +25,15 @@ modifier_item_attackspeed = class({
 	}end,
 })
 
+function modifier_item_attackspeed:OnCreated()
+	self.ability = self:GetAbility()
+	self.bonus_attackspeed = self.ability:GetSpecialValueFor("bonus_attackspeed")
+end
+
+function modifier_item_attackspeed:OnRefresh()
+	self:OnCreated()
+end
+
 function modifier_item_attackspeed:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
+	return self.bonus_attackspeed
 end

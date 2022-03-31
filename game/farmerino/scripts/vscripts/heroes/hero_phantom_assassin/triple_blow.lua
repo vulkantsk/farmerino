@@ -35,6 +35,7 @@ end
 
 
 function modifier_triple_blow_passive:OnAttackStart(keys)
+	if not IsServer() then return end
 	local item = self:GetAbility()
 	local parent = self:GetParent()
 	if item then

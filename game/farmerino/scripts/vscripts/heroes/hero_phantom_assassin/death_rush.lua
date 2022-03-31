@@ -23,6 +23,7 @@ modifier_phantom_assassin_death_rush_passive = class({
 
 })
 function modifier_phantom_assassin_death_rush_passive:GetMinHealth()
+    if not IsServer() then return end
     if self:GetAbility():IsCooldownReady() or not self:GetCaster():IsRealHero() then
         return 1
     else
