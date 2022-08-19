@@ -1,9 +1,9 @@
 @echo off
 @REM Благодарность dark123us
 @REM название аддона
-set NAMECUSTOM=addon_name
+set NAMECUSTOM=farmerino
 @REM гит папка вашего аддона
-set PATHGIT=D:\documents\github\addon_name
+set PATHGIT=D:\documents\github\farmerino
 @REM путь к доте
 set PATHGAME=D:\games\steam\steamapps\common\dota 2 beta
 @REM добавочный путь для папки доты
